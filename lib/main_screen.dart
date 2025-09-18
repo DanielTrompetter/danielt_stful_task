@@ -15,6 +15,11 @@ class MainScreen extends StatelessWidget {
             CounterCard(),
             CounterCard(),
             CounterCard(),
+            SizedBox(height: 24), // mehr Abstand!
+            Text(
+              'Anzahl Cards',
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),

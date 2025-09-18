@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class CounterCard extends StatelessWidget {
+//muss StatefulWidget sein, da sich der Zustand (der counter) ändert
+class CounterCard extends StatefulWidget {
   const CounterCard({super.key});
+
+  @override
+  createState() => CounterCardState();
+}
+
+class CounterCardState extends State<CounterCard> {
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -10,9 +18,9 @@ class CounterCard extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Text('Zähler: 0'),
+            Text('Zähler: $counter'),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => setState(() => counter++),
               child: const Text('Click Me'),
             ),
           ],
